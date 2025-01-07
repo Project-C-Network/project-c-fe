@@ -1,6 +1,9 @@
 import React from "react";
 
 const FeedbackThankinPage = () => {
+  console.log('thanks')
+
+  // bujuku
   return (
     <>
       <h3>Thank You for Your Feedback</h3>
