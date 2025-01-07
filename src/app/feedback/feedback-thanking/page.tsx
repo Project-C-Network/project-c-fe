@@ -1,7 +1,7 @@
 import React from "react";
 
 const FeedbackThankinPage = () => {
-  console.log('thank')
+  console.log('thank you')
 
   // bujuku
   return (
