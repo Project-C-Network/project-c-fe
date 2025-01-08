@@ -1,16 +1,12 @@
-import React from "react";
+import React from 'react';
 
 const FeedbackThankinPage = () => {
-  console.log('thank you')
-
+  console.log('helo');
   // bujuku
   return (
     <>
       <h3>Thank You for Your Feedback</h3>
-      <p>
-        If you’ve already submitted feedback, you can check your thank-you page
-        here.
-      </p>
+      <p>If you’ve already submitted feedback, you can check your thank-you page here.</p>
     </>
   );
 };

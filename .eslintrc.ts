@@ -1,16 +1,6 @@
 module.exports = {
-    root: true,
-    extends: ['next', 'next/core-web-vitals'],
-    rules: {
-      'no-console': [
-        'warn',
-        { allow: ['warn', 'error'] }
-      ],
-      'no-warning-comments': [
-        'warn',
-        { terms: ['todo', 'fixme'], location: 'anywhere' }
-      ],
-      'spaced-comment': ['error', 'always'],
-    },
-  };
-  
+  extends: ['next', 'next/core-web-vitals', 'prettier'],
+  rules: {
+    'no-console': ['error', { allow: ['warn', 'error'] }],
+  },
+};
