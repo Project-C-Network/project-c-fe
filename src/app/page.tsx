@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useDebugValue } from 'react';
 
 const LandinPage = () => {
   return (
