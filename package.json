@@ -23,6 +23,12 @@
       "pnpm prettier --write"
     ]
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pnpm run lint-staged",
+      "pre-push": "pnpm run lint-staged"
+    }
+  },
   "eslintConfig": {
     "rules": {
       "no-console": [
