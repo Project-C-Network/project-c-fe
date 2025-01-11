@@ -17,7 +17,8 @@
   "lint-staged": {
     "src/**/*.{js,jsx,ts,tsx}": [
       "pnpm eslint --fix",
-      "pnpm prettier --write"
+      "pnpm prettier --write",
+      "pnpm run test-all"
     ],
     "**/*.{json,css,md}": [
       "pnpm prettier --write"

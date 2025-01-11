@@ -1,10 +1,10 @@
-import React, { useCallback } from 'react';
+import React from 'react';
 
 const LandinPage = () => {
   return (
     <>
       <h2>Welcome to landing
-         page.. .!</h2>
+         pages.. .!</h2>
     </>
   );
 };
