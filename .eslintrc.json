@@ -1,0 +1,31 @@
+{
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:import/errors",
+    "plugin:import/warnings",
+    "plugin:prettier/recommended"
+  ],
+  "plugins": ["react", "import", "prettier"],
+  "rules": {
+    "camelcase": "error",
+    "id-length": ["error", { "min": 2 }],
+    "react/jsx-pascal-case": ["error", { "allowAllCaps": true }],
+    "import/order": [
+      "error",
+      {
+        "groups": ["builtin", "external", "internal", "parent", "sibling", "index"],
+        "newlines-between": "always"
+      }
+    ],
+    "import/no-unused-modules": ["error", { "unusedExports": true }],
+    "import/no-duplicates": "error",
+    "indent": ["error", 2],
+    "no-trailing-spaces": "error",
+    "space-before-blocks": "error",
+    "space-infix-ops": "error",
+    "no-unused-vars": ["error", { "argsIgnorePattern": "^_", "varsIgnorePattern": "^_" }],
+    "react/no-unused-state": "error",
+    "react/no-unused-prop-types": "error"
+  }
+}

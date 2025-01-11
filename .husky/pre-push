@@ -5,4 +5,4 @@ pnpm test || (echo "Tests failed! Push aborted." && exit 1)
 #!/bin/sh
 . "$(dirname "$0")/_/husky.sh"
 
-pnpm run lint || (echo "Push aborted, please remove comments!" && exit 1)
+pnpm lint-staged || (echo "Code is not clean!" && exit 1)
