@@ -17,12 +17,17 @@ LAST_PUSH_FILE=".git/last_push_time"
 # Get the current timestamp in seconds
 CURRENT_TIME=$(date +%s)
 
-# Check if the last push file exists
+# Check if we are in a valid Git repository
+if [ ! -d ".git" ]; then
+    echo "Not a valid Git repository. Push aborted."
+    exit 1
+fi
+
+# Check if the last push file exists and calculate the time difference
 if [ -f "$LAST_PUSH_FILE" ]; then
-    LAST_PUSH_TIME=$(cat "$LAST_PUSH_FILE")
+    LAST_PUSH_TIME=$(cat "$LAST_PUSH_FILE" 2>/dev/null || echo 0)
     TIME_DIFF=$((CURRENT_TIME - LAST_PUSH_TIME))
 
-    # If the last push was within 300 seconds (5 minutes), prevent the push
     if [ $TIME_DIFF -lt 300 ]; then
         echo "You pushed less than 5 minutes ago. Please wait before pushing again."
         exit 1
