@@ -1,10 +1,9 @@
-import React, { useContext } from 'react';
+import React from 'react';
 
 const LandinPage = () => {
   return (
     <>
-      <h2>Welcome to landing
-         pages.. .!</h2>
+      <h2>Welcome to landing page.. .!</h2>
     </>
   );
 };
