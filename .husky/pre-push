@@ -1,29 +1,24 @@
-#!/bin/sh
+#!/bin/sh (#To check unit test before push)
 . "$(dirname "$0")/_/husky.sh"
 pnpm test || (echo "Tests failed! Push aborted." && exit 1)
 
-#!/bin/sh
+#!/bin/sh (#To check code format & unused variable, imports, exports etc.. before push)
 . "$(dirname "$0")/_/husky.sh"
 
 pnpm lint-staged || (echo "Code is not clean!" && exit 1)
 
-
-#!/bin/sh
+#!/bin/sh (#To prevent frequent push within 5 minutes)
 . "$(dirname "$0")/_/husky.sh"
 
-# File to store the last push time
 LAST_PUSH_FILE=".git/last_push_time"
 
-# Get the current timestamp in seconds
 CURRENT_TIME=$(date +%s)
 
-# Check if we are in a valid Git repository
 if [ ! -d ".git" ]; then
     echo "Not a valid Git repository. Push aborted."
     exit 1
 fi
 
-# Check if the last push file exists and calculate the time difference
 if [ -f "$LAST_PUSH_FILE" ]; then
     LAST_PUSH_TIME=$(cat "$LAST_PUSH_FILE" 2>/dev/null || echo 0)
     TIME_DIFF=$((CURRENT_TIME - LAST_PUSH_TIME))
@@ -34,5 +29,4 @@ if [ -f "$LAST_PUSH_FILE" ]; then
     fi
 fi
 
-# Update the last push time
 echo $CURRENT_TIME > "$LAST_PUSH_FILE"
