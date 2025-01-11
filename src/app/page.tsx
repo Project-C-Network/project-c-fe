@@ -4,7 +4,7 @@ const LandinPage = () => {
   return (
     <>
       <h2>Welcome to landing
-         page.. .!</h2>
+         pages.. .!</h2>
     </>
   );
 };
