@@ -2,10 +2,6 @@
 . "$(dirname "$0")/_/husky.sh"
 pnpm test || (echo "Tests failed! Push aborted." && exit 1)
 
-#!/bin/sh
-. "$(dirname "$0")/_/husky.sh"
-pnpm test-all || (echo "Code is not clean! Commit aborted." && exit 1)
-
 #!/bin/sh (#To check code format & unused variable, imports, exports etc.. before push)
 . "$(dirname "$0")/_/husky.sh"
 
