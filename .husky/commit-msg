@@ -1,4 +1,11 @@
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
 
-pnpm commitlint --edit $1
+COMMIT_MSG_FILE=$1
+COMMIT_MSG=$(cat "$COMMIT_MSG_FILE")
+
+# Check if the commit message starts with PC-<number>-
+if ! echo "$COMMIT_MSG" | grep -qE "^PC-[0-9]+-"; then
+  echo "ERROR: Commit message must start with 'PC-<number>-'"
+  exit 1
+fi
