@@ -12,7 +12,8 @@
     "prepare": "husky && husky install",
     "test": "jest",
     "lint:write": "next lint --cache --fix",
-    "test-all": "pnpm test && pnpm lint-staged"
+    "test-all": "pnpm test && pnpm lint-staged",
+    "commitlint": "commitlint --edit"
   },
   "lint-staged": {
     "src/**/*.{js,jsx,ts,tsx}": [
@@ -53,6 +54,8 @@
     "react-dom": "^19.0.0"
   },
   "devDependencies": {
+    "@commitlint/cli": "^19.6.1",
+    "@commitlint/config-conventional": "^19.6.0",
     "@eslint/eslintrc": "^3",
     "@types/jest": "^29.5.14",
     "@types/node": "^20",
