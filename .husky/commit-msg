@@ -1,11 +1,12 @@
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
 
+
 COMMIT_MSG_FILE=$1
 COMMIT_MSG=$(cat "$COMMIT_MSG_FILE")
 
-# Check if the commit message starts with PC-<number>-
-if ! echo "$COMMIT_MSG" | grep -qE "^PC-[0-9]+-"; then
-  echo "ERROR: Commit message must start with 'PC-<number>-'"
+# Check if the commit message starts with PC-<number>-<type>: <message> eg: git commit -m "PC-16-chore: update commitlint rules"
+if ! echo "$COMMIT_MSG" | grep -qE "^PC-[0-9]+-[a-zA-Z]+: .+"; then
+  echo "ERROR: Commit message must follow the format 'PC-<number>-<type>: <message>'"
   exit 1
 fi
