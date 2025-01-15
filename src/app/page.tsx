@@ -1,11 +1,9 @@
-import React from 'react';
-
-const LandinPage = () => {
+const landinPage = () => {
   return (
     <>
-      <h2>Welcome to landing pages...!</h2>
+      <h2>Welcome to landing page...!</h2>
     </>
   );
 };
 
-export default LandinPage;
+export default landinPage;
